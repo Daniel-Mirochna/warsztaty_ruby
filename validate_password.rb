@@ -14,6 +14,13 @@ class ValidatePassword
     check_max_chars_amount
   end
 
+  # I could use also below method to fullfill all of checks :)
+  # def perform
+  #   !!(@password =~ /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?!.*(.)\1\1)(?=.{6,24}$)/)
+  # end
+
+  private
+
   def check_length
     @password.length.between?(6,24)
   end
